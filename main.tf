@@ -23,3 +23,11 @@ provider "aws" {
 resource "aws_vpc" "vpc01" {
   cidr_block = "10.0.0.0/16"
 }
+locals {
+  users = ["savi", "rahul", "mohit", "aman"]
+}
+
+resource "aws_iam_user" "iam" {
+  count = length(local.users)
+  name  = element(local.users, count.index)
+}
