@@ -20,7 +20,7 @@ provider "aws" {
 }
 # create one aws_vpc
 
-resource "aws_vpc" "vpc01" {
+/* resource "aws_vpc" "vpc01" {
   cidr_block = "10.0.0.0/16"
 }
 locals {
@@ -30,4 +30,4 @@ locals {
 resource "aws_iam_user" "iam" {
   count = length(local.users)
   name  = element(local.users, count.index)
-}
+} */
